@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY page "http://dbpedia.org/page/" >
+    <!ENTITY ontology "http://dbpedia.org/ontology/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.mohannadkarim.com/2016/movies.owl#"
+     xml:base="http://www.mohannadkarim.com/2016/movies.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:page="http://dbpedia.org/page/"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://www.mohannadkarim.com/2016/movies.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#Distributes -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Distributes">
+        <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#isDistributedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#Produced -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Produced">
+        <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#isProducedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#actedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#actedIn">
+        <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#hasActor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#becomesDirectorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#becomesDirectorOf">
+        <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#hasDirector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#becomesProducerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#becomesProducerOf">
+        <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#hasProducer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasActor">
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasDirector">
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasGenre">
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#hasProducer -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasProducer">
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#isDistributedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#isDistributedBy">
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#isGenreOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#isGenreOf">
+        <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#hasGenre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#isProducedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#isProducedBy">
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#actedInTheSameMovie">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Actor"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#sameStoryAs">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#companyName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#companyName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#companyURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#companyURL">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#duration">
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#language -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#language">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#releaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#releaseDate">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mohannadkarim.com/2016/movies.owl#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#title">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- *************** Classes *************** -->
+
+  
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Action">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Adventure">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Animation">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Comedy">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Documentary">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Drama">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+    
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Fantasy">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Horror">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Romance">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Thriller">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Western">
+        <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </owl:Class>
+    
+    
+<!-- **************************************************************** -->
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Movie">
+        <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+            <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+            <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Actor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#actedIn"/>
+                        <owl:someValuesFrom rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+       <!-- <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/> -->
+    </owl:Class>
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Director">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#becomesDirectorOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <!-- <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/> -->
+    </owl:Class>
+
+
+   
+     <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Distributor">
+        <owl:equivalentClass>
+	     <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#distributes"/>
+                        <owl:someValuesFrom rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+	</owl:equivalentClass>	
+    </owl:Class>
+
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Producer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#becomesProducerOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <!-- <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/> -->
+    </owl:Class>
+   
+
+    <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Studio">
+        <owl:equivalentClass>
+	     <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Produced"/>
+                        <owl:someValuesFrom rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+	</owl:equivalentClass>	
+    </owl:Class>
+
+
+</rdf:RDF>
+
+
+
+

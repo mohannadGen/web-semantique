@@ -1,0 +1,707 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:movies="http://www.mohannadkarim.com/2016/movies.owl#"
+    xmlns:movies-m="http://www.mohannadkarim.com/2016/movies.owl/movie#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:ontology="http://dbpedia.org/ontology/"
+    xmlns:movies-g="http://www.mohannadkarim.com/2016/movies.owl/genre#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:movies-c="http://www.mohannadkarim.com/2016/movies.owl/company#"
+    xmlns:movies-p="http://www.mohannadkarim.com/2016/movies.owl/person#"
+    xmlns:page="http://dbpedia.org/page/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.mohannadkarim.com/2016/movies.owl"/>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Adventure">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Action">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Horror">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Actor">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#actedIn"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Director">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#becomesDirectorOf"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Drama">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Distributor">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#distributes"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Documentary">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Comedy">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Studio">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Produced"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Producer">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#becomesProducerOf"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Thriller">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Western">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Romance">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Animation">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Fantasy">
+    <rdfs:subClassOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Movie">
+    <owl:disjointUnionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+      <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+      <owl:Class rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    </owl:disjointUnionOf>
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#isGenreOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasGenre"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#becomesDirectorOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasDirector"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#isProducedBy">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#actedIn">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasActor"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasActor">
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Produced">
+    <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#isProducedBy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasProducer">
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasDirector">
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#isDistributedBy">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#becomesProducerOf">
+    <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#hasProducer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#hasGenre">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Genre"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#Distributes">
+    <owl:inverseOf rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#isDistributedBy"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#name">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#language">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#companyURL">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#companyName">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Company"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#duration">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#title">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#releaseDate">
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#sameStoryAs">
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Movie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:SymmetricProperty rdf:about="http://www.mohannadkarim.com/2016/movies.owl#actedInTheSameMovie">
+    <rdfs:range rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Actor"/>
+    <rdfs:domain rdf:resource="http://www.mohannadkarim.com/2016/movies.owl#Actor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Minions">
+    <movies:isDistributedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Universal_Studios">
+        <owl:sameAs>http://dbpedia.org/resource/Universal_Studios</owl:sameAs>
+        <movies:companyName>Universal Studios</movies:companyName>
+      </movies:Company>
+    </movies:isDistributedBy>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jon_Hamm">
+        <movies:name>Jon Hamm</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Family"/>
+    </movies:hasGenre>
+    <movies:title>Minions</movies:title>
+    <movies:abstract>Minions is an upcoming American 3D computer-animated comedy film and a spin-off/prequel to Despicable Me (2010) and Despicable Me 2 (2013). It is being produced by Illumination Entertainment for Universal Pictures. Written by Brian Lynch, it will be directed by Pierre Coffin and Kyle Balda, and produced by Chris Meledandri and Janet Healy. Sandra Bullock voices Scarlet Overkill, the villain of the film and Jon Hamm will voice her husband, inventor Herb Overkill. The film is scheduled to be released on July 10, 2015. The film was first foreshadowed in the ending credits of Despicable Me 2, where Stuart, Kevin and Bob, Gru's minions, are seen auditioning for the film.</movies:abstract>
+    <movies:country>United States</movies:country>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Allison_Janney">
+        <movies:name>Allison Janney</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_Keaton">
+        <movies:name>Michael Keaton</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Sandra_Bullock">
+        <movies:name>Sandra Bullock</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Pierre_Coffin">
+        <movies:name>Pierre Coffin</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:isProducedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Illumination_Entertainment">
+        <owl:sameAs>http://dbpedia.org/resource/Illumination_Entertainment</owl:sameAs>
+        <movies:companyName>Illumination Entertainment</movies:companyName>
+      </movies:Company>
+    </movies:isProducedBy>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Comedy"/>
+    </movies:hasGenre>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Steve_Coogan">
+        <movies:name>Steve Coogan</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <owl:sameAs>http://dbpedia.org/resource/Minions_(film)</owl:sameAs>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Animated"/>
+    </movies:hasGenre>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#90_Minutes_in_Heaven">
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jason_Kennedy">
+        <movies:name>Jason Kennedy</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Dwight_Yoakam">
+        <movies:name>Dwight Yoakam</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_W._Smith">
+        <movies:name>Michael W. Smith</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Kate_Bosworth">
+        <movies:name>Kate Bosworth</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Hayden_Christensen">
+        <movies:name>Hayden Christensen</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_Polish">
+        <movies:name>Michael Polish</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Drama"/>
+    </movies:hasGenre>
+    <movies:title>90 Minutes in Heaven</movies:title>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Wolf_Totem">
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
+    </movies:hasGenre>
+    <movies:abstract>Wolf Totem is an upcoming Chinese-language drama film based on the 2004 Chinese semiautobiographical novel of the same name by Lu Jiamin. The film is directed by French director Jean-Jacques Annaud. According to Annaud, the producers sought to produce a film adaptation of the book but did not want to use a Chinese or U.S. director. They had also wanted a film to be released in time for the 2008 Summer Olympics in Beijing. Annaud began development of the project in 2009. By April 2013, the lead roles were cast, and with a production budget of $38 million, filming began in Inner Mongolia, where the book is set. Annaud filmed in 3D. The film will premiere at the European Film Market on February 7, 2015. It is scheduled to be released in China on February 13, 2015 and in France on February 25, 2015.</movies:abstract>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Feng_Shaofeng">
+        <movies:name>Feng Shaofeng</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <owl:sameAs>http://dbpedia.org/resource/Wolf_Totem_(film)</owl:sameAs>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Xavier_Castano">
+        <movies:name>Xavier Castano</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jean-Jacques_Annaud">
+        <movies:name>Jean-Jacques Annaud</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >121.0</movies:duration>
+    <movies:country>France</movies:country>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
+    </movies:hasGenre>
+    <movies:title>Wolf Totem</movies:title>
+    <movies:isDistributedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#China_Film_Group_Corporation">
+        <owl:sameAs>http://dbpedia.org/resource/China_Film_Group_Corporation</owl:sameAs>
+        <movies:companyName>China Film Group Corporation</movies:companyName>
+      </movies:Company>
+    </movies:isDistributedBy>
+    <movies:budget rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >3.8E7</movies:budget>
+    <movies:country>China</movies:country>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Fantastic_Four">
+    <movies:abstract>Fantastic Four is a 2005 superhero film based on the Marvel Comics team of the same name. It was directed by Tim Story, and released by 20th Century Fox. It is the second live-action Fantastic Four film to be filmed. A previous attempt, titled The Fantastic Four, was a B-movie produced by Roger Corman that ultimately went unreleased. Fantastic Four was released in the United States on July 8, 2005.Despite being a box-office success, the film was negatively received by critics, being criticized for its plot and its lack of originality. A sequel, Fantastic Four: Rise of the Silver Surfer, was released in 2007.</movies:abstract>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Sci-Fi"/>
+    </movies:hasGenre>
+    <movies:country>United States</movies:country>
+    <owl:sameAs>http://dbpedia.org/resource/Fantastic_Four_(film)</owl:sameAs>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jamie_Bell">
+        <movies:name>Jamie Bell</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:budget rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >1.0E8</movies:budget>
+    <movies:title>Fantastic Four</movies:title>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Toby_Kebbell">
+        <movies:name>Toby Kebbell</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Miles_Teller">
+        <movies:name>Miles Teller</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Kate_Mara">
+        <movies:name>Kate Mara</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >123.0</movies:duration>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
+    <movies:isDistributedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#20th_Century_Fox">
+        <owl:sameAs>http://dbpedia.org/resource/20th_Century_Fox</owl:sameAs>
+        <movies:companyName>20th Century Fox</movies:companyName>
+      </movies:Company>
+    </movies:isDistributedBy>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Josh_Trank">
+        <movies:name>Josh Trank</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Fantasy"/>
+    </movies:hasGenre>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_B._Jordan">
+        <movies:name>Michael B. Jordan</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#36_Saints">
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Dominic_Colón">
+        <movies:name>Dominic Colón</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Joey_Dedio">
+        <movies:name>Joey Dedio</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Allan_Louis">
+        <movies:name>Allan Louis</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jaime_Tirelli">
+        <movies:name>Jaime Tirelli</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Franky_G.">
+        <movies:name>Franky G.</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Thriller"/>
+    </movies:hasGenre>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Suspense"/>
+    </movies:hasGenre>
+    <movies:title>36 Saints</movies:title>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Ant-Man">
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Sci-Fi"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Patrick_Wilson">
+        <movies:name>Patrick Wilson</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Family"/>
+    <movies:title>Ant-Man</movies:title>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Fantasy"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Paul_Rudd">
+        <movies:name>Paul Rudd</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:abstract>Ant-Man is an upcoming American superhero film based on the Marvel Comics characters of the same name: Scott Lang and Hank Pym. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is intended to be the twelfth installment of the Marvel Cinematic Universe (MCU). The film was directed by Peyton Reed, with a screenplay written by Adam McKay and Paul Rudd, and stars Rudd, Evangeline Lilly, Corey Stoll, Bobby Cannavale, Michael Peña, Judy Greer, Tip \"T.I\" Harris, David Dastmalchian, Wood Harris, Jordi Mollà, and Michael Douglas. In Ant-Man, Lang must help defend Dr. Pym's Ant-Man technology and plot a heist with worldwide ramifications.Development of Ant-Man began in April 2006, with the hiring of Edgar Wright to direct and co-write with Joe Cornish. By April 2011, Wright and Cornish had completed three drafts of the script and Wright shot test footage for the film in July 2012. Pre-production began in October 2013 after being put on hold so that Wright could complete The World's End. Casting began in December 2013, with the acquisition of Rudd to play Lang. In May 2014, Wright left the project citing creative differences, though still received a story credit with Cornish. The following month, Reed was brought in as Wright's replacement and McKay was hired to contribute to the script. Principal photography took place between August and December 2014 in San Francisco and Metro Atlanta.Ant-Man is scheduled to be released on July 17, 2015.</movies:abstract>
+    <movies:isProducedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Marvel_Studios">
+        <owl:sameAs>http://dbpedia.org/resource/Marvel_Studios</owl:sameAs>
+        <movies:companyName>Marvel Studios</movies:companyName>
+      </movies:Company>
+    </movies:isProducedBy>
+    <movies:isDistributedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Walt_Disney_Studios_Motion_Pictures">
+        <owl:sameAs>http://dbpedia.org/resource/Walt_Disney_Studios_Motion_Pictures</owl:sameAs>
+        <movies:companyName>Walt Disney Studios Motion Pictures</movies:companyName>
+      </movies:Company>
+    </movies:isDistributedBy>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_Douglas">
+        <movies:name>Michael Douglas</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Peyton_Reed">
+        <movies:name>Peyton Reed</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Corey_Stoll">
+        <movies:name>Corey Stoll</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
+    <movies:country>United States</movies:country>
+    <owl:sameAs>http://dbpedia.org/resource/Ant-Man_(film)</owl:sameAs>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Matt_Gerald">
+        <movies:name>Matt Gerald</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Hey_Bartender">
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Douglas_Tirola">
+        <movies:name>Douglas Tirola</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasGenre>
+      <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Documentary"/>
+    </movies:hasGenre>
+    <movies:title>Hey Bartender</movies:title>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#The_Transporter_Refueled">
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ray_Stevenson">
+        <movies:name>Ray Stevenson</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Anatole_Taubman">
+        <movies:name>Anatole Taubman</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ed_Skrein">
+        <movies:name>Ed Skrein</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Camille_Delamarre">
+        <movies:name>Camille Delamarre</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Thriller"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Samir_Guesmi">
+        <movies:name>Samir Guesmi</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:title>The Transporter Refueled</movies:title>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Suspense"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Gabriella_Wright">
+        <movies:name>Gabriella Wright</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Walt_Before_Mickey">
+    <movies:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >110.0</movies:duration>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jon_Heder">
+        <movies:name>Jon Heder</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:country>United States</movies:country>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Documentary"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#David_Henrie">
+        <movies:name>David Henrie</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Thomas_Ian_Nicholas">
+        <movies:name>Thomas Ian Nicholas</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Khoa_Le">
+        <movies:name>Khoa Le</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <owl:sameAs>http://dbpedia.org/resource/Walt_Before_Mickey</owl:sameAs>
+    <movies:title>Walt Before Mickey</movies:title>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ayla_Kell">
+        <movies:name>Ayla Kell</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Hunter_Gomez">
+        <movies:name>Hunter Gomez</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:abstract>Walt Before Mickey is a 2015 film based on a book and a true story about the early years of Walt Disney. [1] The film stars Thomas Ian Nicholas in the role of Walt Disney , Armando Gutierrez in the role of Ub Iwerks, and Jon Heder as Roy Disney.  film covers Walt Disney's early years in business, during which he started various businesses including Laugh-O-Gram Studio and The Walt Disney Company with fellow animator Ub Iwerks and Roy Disney. [2]</movies:abstract>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Mission:_Impossible_-_Rogue_Nation">
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Tom_Cruise">
+        <movies:name>Tom Cruise</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ving_Rhames">
+        <movies:name>Ving Rhames</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Christopher_McQuarrie">
+        <movies:name>Christopher McQuarrie</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jeremy_Renner">
+        <movies:name>Jeremy Renner</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Simon_Pegg">
+        <movies:name>Simon Pegg</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:title>Mission: Impossible - Rogue Nation</movies:title>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Alec_Baldwin">
+        <movies:name>Alec Baldwin</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Family"/>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Ted_2">
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Morgan_Freeman">
+        <movies:name>Morgan Freeman</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:title>Ted 2</movies:title>
+    <movies:isProducedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Fuzzy_Door_Productions">
+        <owl:sameAs>http://dbpedia.org/resource/Fuzzy_Door_Productions</owl:sameAs>
+        <movies:companyName>Fuzzy Door Productions</movies:companyName>
+      </movies:Company>
+    </movies:isProducedBy>
+    <movies:isDistributedBy rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/company#Universal_Studios"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Mark_Wahlberg">
+        <movies:name>Mark Wahlberg</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Seth_MacFarlane">
+        <movies:name>Seth MacFarlane</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:country>United States</movies:country>
+    <movies:hasDirector rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Seth_MacFarlane"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Amanda_Seyfried">
+        <movies:name>Amanda Seyfried</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <owl:sameAs>http://dbpedia.org/resource/Ted_2</owl:sameAs>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Comedy"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jessica_Barth">
+        <movies:name>Jessica Barth</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:abstract>Ted 2 is an upcoming American comedy film directed by Seth MacFarlane and written by MacFarlane, Alec Sulkin and Wellesley Wild. It is the sequel to MacFarlane's 2012 film Ted. The film stars MacFarlane as the title character, along with Mark Wahlberg and Amanda Seyfried. The film is scheduled to be released on June 26, 2015, by  Universal Pictures.</movies:abstract>
+  </movies:Movie>
+  <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Knock_Knock">
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Thriller"/>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Dan_Baily">
+        <movies:name>Dan Baily</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Keanu_Reeves">
+        <movies:name>Keanu Reeves</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <owl:sameAs>http://dbpedia.org/resource/Knock,_Knock_(2015_film)</owl:sameAs>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Aaron_Burns">
+        <movies:name>Aaron Burns</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:title>Knock Knock</movies:title>
+    <movies:isDistributedBy>
+      <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Lions_Gate_Entertainment">
+        <owl:sameAs>http://dbpedia.org/resource/Lions_Gate_Entertainment</owl:sameAs>
+        <movies:companyName>Lions Gate Entertainment</movies:companyName>
+      </movies:Company>
+    </movies:isDistributedBy>
+    <movies:hasDirector>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Eli_Roth">
+        <movies:name>Eli Roth</movies:name>
+      </movies:Person>
+    </movies:hasDirector>
+    <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Suspense"/>
+    <movies:abstract>Knock, Knock is a 2015 American horror thriller film directed by Eli Roth, who also co-wrote the script with Guillermo Amoedo and Nicolás López. The film stars Keanu Reeves.</movies:abstract>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ana_Celia_De_Armas">
+        <movies:name>Ana Celia De Armas</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+    <movies:country>United States</movies:country>
+    <movies:hasActor>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Colleen_Camp">
+        <movies:name>Colleen Camp</movies:name>
+      </movies:Person>
+    </movies:hasActor>
+  </movies:Movie>
+</rdf:RDF>
