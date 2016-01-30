@@ -29,7 +29,8 @@ public class SparqlQuery {
 
 
     public static String personInDbpediaEn(String personName) {
-        personName = personName.replace(" ", "_");
+       // personName = personName.replace(" ", "_");
+        System.out.println(" ---))) is "+ personName + " in dbpedia ");
         String queryString = PREFIXES_EN +
                 "SELECT DISTINCT ?person WHERE {" +
                 "SERVICE <http://DBpedia.org/sparql> "+

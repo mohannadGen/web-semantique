@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * Created by mohannad on 29/01/16.
@@ -34,6 +35,7 @@ public class WepSiteParser {
     private final static String OUTPUT = "movies.rdf";
 
     private static Hashtable<String, String> GENRE_MAP = new Hashtable<>() ;
+    private static Pattern pattern = Pattern.compile("\\(.*\\)");
 
     private final OntModel m;
 
@@ -92,7 +94,7 @@ public class WepSiteParser {
             return;
         }
 
-        List<Set<String>> people = null;
+
 
         String movietitle = doc.select("#completeInfo h1").first().text().trim();
         System.out.println("Movie: " + movietitle);
@@ -177,7 +179,6 @@ public class WepSiteParser {
                 System.out.println("\tAbstract: " + abs);
             }
 
-            people = SparqlQuery.getPerson(mResult);
         }
 
         Elements sidebar = doc.select("#movieSpecs li");
@@ -201,6 +202,7 @@ public class WepSiteParser {
                     String[] directors = element.text().substring(9).split(", |\\/");
                     for(String director : directors){
                         //System.out.println("DDDD : " + director);
+
                         Resource person = m.createResource(PERSON + director.replace(" ", "_"));
                         person.addProperty(m.getProperty(NS + "name"), director);
                         person.addProperty(RDF.type, m.getProperty(NS + "Person"));
@@ -209,7 +211,24 @@ public class WepSiteParser {
                         //check if the director has dbpedia page. Describe as sameAs if true
                         String qResult;
                         if((qResult = SparqlQuery.personInDbpediaEn(director)) != null) { // in dbpedia.org
+                            System.out.println("\t\tqResult: "+DBR +qResult);
                             person.addProperty(OWL.sameAs, DBR + qResult);
+                            HashMap<String,String> data = SparqlQuery.getPersonalInfo(DBR + qResult);
+                            if(data.containsKey("birthdate")) {
+                                String birthdate = data.get("birthdate");
+                                if(birthdate.trim().matches("^[0-9]{4}$"))
+                                    birthdate = birthdate.trim() + "-01-01";
+                                person.addProperty(m.getProperty(NS + "birthDate"), birthdate + "T00:00:00", XSDDatatype.XSDdateTime);
+                                System.out.println("\t\tBirthdate: " + birthdate);
+                            }
+                            //add nationality
+                            if(data.containsKey("nationality")) {
+                                String[] nationalities = data.get("nationality").replace(" ","").replace("\"","").split(",");
+                                for (String nationality : nationalities) {
+                                    person.addProperty(m.getProperty(NS + "nationality"), nationality);
+                                    System.out.println("\t\tNationality: " + nationality);
+                                }
+                            }
                         }
                     }
                     break;
@@ -226,7 +245,25 @@ public class WepSiteParser {
                         //check if the actor has dbpedia page. Describe as sameAs if true
                         String qResult;
                         if((qResult = SparqlQuery.personInDbpediaEn(actor)) != null) { // in dbpedia.org
+                            System.out.println("\t\tqResult: "+DBR +qResult);
                             person.addProperty(OWL.sameAs, DBR + qResult);
+                            HashMap<String,String> data = SparqlQuery.getPersonalInfo( DBR + qResult);
+                            //add birth date
+                            if(data.containsKey("birthdate")) {
+                                String birthdate = data.get("birthdate");
+                                if(birthdate.trim().matches("^[0-9]{4}$"))
+                                    birthdate = birthdate.trim() + "-01-01";
+                                person.addProperty(m.getProperty(NS + "birthDate"), birthdate + "T00:00:00", XSDDatatype.XSDdateTime);
+                                System.out.println("\t\tBirthdate: " + birthdate);
+                            }
+                            //add nationality
+                            if(data.containsKey("nationality")) {
+                                String[] nationalities = data.get("nationality").replace(" ", "").replace("\"", "").split(",");
+                                for (String nationality : nationalities) {
+                                    person.addProperty(m.getProperty(NS + "nationality"), nationality);
+                                    System.out.println("\t\tNationality: " + nationality);
+                                }
+                            }
                         }
 
                     }
@@ -234,6 +271,189 @@ public class WepSiteParser {
 
             }
         }
+
+
+        if(mResult != null){
+            List<Set<String>> people = SparqlQuery.getPerson(mResult);
+
+            Set<String> directors = people.get(0);
+            Set<String> actors = people.get(1);
+            Set<String> producers = people.get(2);
+            Set<String> composers = people.get(3);
+            Set<String> editors = people.get(4);
+            Set<String> writers = people.get(5);
+            Set<String> cinematographers = people.get(6);
+
+            //create producers
+            if(!producers.isEmpty()) {
+                for(String producer: producers) {
+                    //get personal data
+                    HashMap<String,String> data = SparqlQuery.getPersonalInfo(producer);
+
+                    System.out.println("\tProducer: " + producer);
+                    String name = pattern.matcher(producer.replace("http://dbpedia.org/resource/", "").replace("_"," ")).replaceAll("").trim();
+                    Resource person = m.createResource(PERSON + producer.replace("http://dbpedia.org/resource/", ""));
+                    person.addProperty(RDF.type, m.getProperty(NS + "Person"))
+                            .addProperty(m.getProperty(NS + "name"), name)
+                            .addProperty(OWL.sameAs, producer);
+                    //add birth date
+                    if(data.containsKey("birthdate")) {
+                        String birthdate = data.get("birthdate");
+                        if(birthdate.trim().matches("^[0-9]{4}$"))
+                            birthdate = birthdate.trim() + "-01-01";
+                        person.addProperty(m.getProperty(NS + "birthDate"), birthdate + "T00:00:00", XSDDatatype.XSDdateTime);
+                        System.out.println("\t\tBirthdate: " + birthdate);
+                    }
+                    //add nationality
+                    if(data.containsKey("nationality")) {
+                        String[] nationalities = data.get("nationality").replace(" ","").replace("\"","").split(",");
+                        for (String nationality : nationalities) {
+                            person.addProperty(m.getProperty(NS + "nationality"), nationality);
+                            System.out.println("\t\tNationality: " + nationality);
+                        }
+                    }
+
+                    movie.addProperty(m.getProperty(NS + "hasProducer"), person);
+                }
+            }
+
+            //create composers
+            if(!composers.isEmpty()) {
+                for(String composer: composers) {
+                    //get personal data
+                    HashMap<String,String> data = SparqlQuery.getPersonalInfo(composer);
+
+                    System.out.println("\tComposer: " + composer);
+                    String name = pattern.matcher(composer.replace("http://dbpedia.org/resource/", "").replace("_"," ")).replaceAll("").trim();
+
+                    Resource person = m.createResource(PERSON + composer.replace("http://dbpedia.org/resource/", ""));
+                    person.addProperty(RDF.type, m.getProperty(NS + "Person"))
+                            .addProperty(m.getProperty(NS + "name"), name)
+                            .addProperty(OWL.sameAs, composer);
+                    //add birth date
+                    if(data.containsKey("birthdate")) {
+                        String birthdate = data.get("birthdate");
+                        if(birthdate.trim().matches("^[0-9]{4}$"))
+                            birthdate = birthdate.trim() + "-01-01";
+                        person.addProperty(m.getProperty(NS + "birthDate"), birthdate + "T00:00:00", XSDDatatype.XSDdateTime);
+                        System.out.println("\t\tBirthdate: " + birthdate);
+                    }
+                    //add nationality
+                    if(data.containsKey("nationality")) {
+                        String[] nationalities = data.get("nationality").replace(" ","").replace("\"","").split(",");
+                        for (String nationality : nationalities) {
+                            person.addProperty(m.getProperty(NS + "nationality"), nationality);
+                            System.out.println("\t\tNationality: " + nationality);
+                        }
+                    }
+
+                    movie.addProperty(m.getProperty(NS + "hasMusicComposer"), person);
+                }
+            }
+
+            //create editors
+            if(!editors.isEmpty()) {
+                for(String editor: editors) {
+                    //get personal data
+                    HashMap<String,String> data = SparqlQuery.getPersonalInfo(editor);
+
+                    System.out.println("\tEditor: " + editor);
+                    String name = pattern.matcher(editor.replace("http://dbpedia.org/resource/", "").replace("_"," ")).replaceAll("").trim();
+                    Resource person = m.createResource(PERSON + editor.replace("http://dbpedia.org/resource/", ""));
+                    person.addProperty(RDF.type, m.getProperty(NS + "Person"))
+                            .addProperty(m.getProperty(NS + "name"), name)
+                            .addProperty(OWL.sameAs, editor);
+                    //add birth date
+                    if(data.containsKey("birthdate")) {
+                        String birthdate = data.get("birthdate");
+                        if(birthdate.trim().matches("^[0-9]{4}$"))
+                            birthdate = birthdate.trim() + "-01-01";
+                        person.addProperty(m.getProperty(NS + "birthDate"), birthdate + "T00:00:00", XSDDatatype.XSDdateTime);
+                        System.out.println("\t\tBirthdate: " + birthdate);
+                    }
+                    //add nationality
+                    if(data.containsKey("nationality")) {
+                        String[] nationalities = data.get("nationality").replace(" ","").replace("\"","").split(",");
+                        for (String nationality : nationalities) {
+                            person.addProperty(m.getProperty(NS + "nationality"), nationality);
+                            System.out.println("\t\tNationality: " + nationality);
+                        }
+                    }
+                    movie.addProperty(m.getProperty(NS + "hasEditor"), person);
+                }
+            }
+
+            //create writers
+            if(!writers.isEmpty()) {
+                for(String writer: writers) {
+                    //get personal data
+                    HashMap<String,String> data = SparqlQuery.getPersonalInfo(writer);
+
+                    System.out.println("\tWriter: " + writer);
+                    String name = pattern.matcher(writer.replace("http://dbpedia.org/resource/", "").replace("_"," ")).replaceAll("").trim();
+                    Resource person = m.createResource(PERSON + writer.replace("http://dbpedia.org/resource/", ""));
+                    person.addProperty(RDF.type, m.getProperty(NS + "Person"))
+                            .addProperty(m.getProperty(NS + "name"), name)
+                            .addProperty(OWL.sameAs, writer);
+                    //add birth date
+                    if(data.containsKey("birthdate")) {
+                        String birthdate = data.get("birthdate");
+                        if(birthdate.trim().matches("^[0-9]{4}$"))
+                            birthdate = birthdate.trim() + "-01-01";
+                        person.addProperty(m.getProperty(NS + "birthDate"), birthdate + "T00:00:00", XSDDatatype.XSDdateTime);
+                        System.out.println("\t\tBirthdate: " + birthdate);
+                    }
+                    //add nationality
+                    if(data.containsKey("nationality")) {
+                        String[] nationalities = data.get("nationality").replace(" ","").replace("\"","").split(",");
+                        for (String nationality : nationalities) {
+                            person.addProperty(m.getProperty(NS + "nationality"), nationality);
+                            System.out.println("\t\tNationality: " + nationality);
+                        }
+                    }
+
+                    movie.addProperty(m.getProperty(NS + "hasWriter"), person);
+                }
+            }
+
+            //create cinematographers
+            if(!cinematographers.isEmpty()) {
+                for(String cinematographer: cinematographers) {
+                    //get personal data
+                    HashMap<String,String> data = SparqlQuery.getPersonalInfo(cinematographer);
+
+                    System.out.println("\tCinematographer: " + cinematographer);
+                    String name = pattern.matcher(cinematographer.replace("http://dbpedia.org/resource/", "").replace("_"," ")).replaceAll("").trim();
+                    Resource person = m.createResource(PERSON + cinematographer.replace("http://dbpedia.org/resource/", ""));
+                    person.addProperty(RDF.type, m.getProperty(NS + "Person"))
+                            .addProperty(m.getProperty(NS + "name"), name)
+                            .addProperty(OWL.sameAs, cinematographer);
+                    //add birth date
+                    if(data.containsKey("birthdate")) {
+                        String birthdate = data.get("birthdate");
+                        if(birthdate.trim().matches("^[0-9]{4}$"))
+                            birthdate = birthdate.trim() + "-01-01";
+                        person.addProperty(m.getProperty(NS + "birthDate"), birthdate + "T00:00:00", XSDDatatype.XSDdateTime);
+                        System.out.println("\t\tBirthdate: " + birthdate);
+                    }
+                    //add nationality
+                    if(data.containsKey("nationality")) {
+                        String[] nationalities = data.get("nationality").replace(" ","").replace("\"","").split(",");
+                        for (String nationality : nationalities) {
+                            person.addProperty(m.getProperty(NS + "nationality"), nationality);
+                            System.out.println("\t\tNationality: " + nationality);
+                        }
+                    }
+
+                    movie.addProperty(m.getProperty(NS + "hasCinematographer"), person);
+                }
+            }
+
+
+
+
+        }
+
 
 
 

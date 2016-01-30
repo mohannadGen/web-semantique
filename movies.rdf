@@ -234,6 +234,9 @@
     </movies:isDistributedBy>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jon_Hamm">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1971-03-10T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Jon_Hamm</owl:sameAs>
         <movies:name>Jon Hamm</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -243,23 +246,44 @@
     <movies:title>Minions</movies:title>
     <movies:abstract>Minions is an upcoming American 3D computer-animated comedy film and a spin-off/prequel to Despicable Me (2010) and Despicable Me 2 (2013). It is being produced by Illumination Entertainment for Universal Pictures. Written by Brian Lynch, it will be directed by Pierre Coffin and Kyle Balda, and produced by Chris Meledandri and Janet Healy. Sandra Bullock voices Scarlet Overkill, the villain of the film and Jon Hamm will voice her husband, inventor Herb Overkill. The film is scheduled to be released on July 10, 2015. The film was first foreshadowed in the ending credits of Despicable Me 2, where Stuart, Kevin and Bob, Gru's minions, are seen auditioning for the film.</movies:abstract>
     <movies:country>United States</movies:country>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Chris_Meledandri">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1959-05-15T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Chris_Meledandri</owl:sameAs>
+        <movies:name>Chris Meledandri</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Allison_Janney">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1959-11-19T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Allison_Janney</owl:sameAs>
         <movies:name>Allison Janney</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_Keaton">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1951-09-05T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Michael_Keaton</owl:sameAs>
         <movies:name>Michael Keaton</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Sandra_Bullock">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1964-07-26T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Sandra_Bullock</owl:sameAs>
         <movies:name>Sandra Bullock</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasDirector>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Pierre_Coffin">
+        <movies:nationality>French</movies:nationality>
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1967-11-01T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Pierre_Coffin</owl:sameAs>
         <movies:name>Pierre Coffin</movies:name>
       </movies:Person>
     </movies:hasDirector>
@@ -274,6 +298,9 @@
     </movies:hasGenre>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Steve_Coogan">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1965-10-14T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Steve_Coogan</owl:sameAs>
         <movies:name>Steve Coogan</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -281,6 +308,22 @@
     <movies:hasGenre>
       <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Animated"/>
     </movies:hasGenre>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Brian_Lynch_(writer)">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1973-06-21T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Brian_Lynch_(writer)</owl:sameAs>
+        <movies:name>Brian Lynch</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
+    <movies:hasMusicComposer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Heitor_Pereira">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1960-11-29T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Heitor_Pereira</owl:sameAs>
+        <movies:name>Heitor Pereira</movies:name>
+      </movies:Person>
+    </movies:hasMusicComposer>
   </movies:Movie>
   <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#90_Minutes_in_Heaven">
     <movies:hasActor>
@@ -290,21 +333,33 @@
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Dwight_Yoakam">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1956-10-23T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Dwight_Yoakam</owl:sameAs>
         <movies:name>Dwight Yoakam</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_W._Smith">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1957-10-07T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Michael_W._Smith</owl:sameAs>
         <movies:name>Michael W. Smith</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Kate_Bosworth">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1983-01-02T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Kate_Bosworth</owl:sameAs>
         <movies:name>Kate Bosworth</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Hayden_Christensen">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1981-04-19T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Hayden_Christensen</owl:sameAs>
         <movies:name>Hayden Christensen</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -325,6 +380,9 @@
     <movies:abstract>Wolf Totem is an upcoming Chinese-language drama film based on the 2004 Chinese semiautobiographical novel of the same name by Lu Jiamin. The film is directed by French director Jean-Jacques Annaud. According to Annaud, the producers sought to produce a film adaptation of the book but did not want to use a Chinese or U.S. director. They had also wanted a film to be released in time for the 2008 Summer Olympics in Beijing. Annaud began development of the project in 2009. By April 2013, the lead roles were cast, and with a production budget of $38 million, filming began in Inner Mongolia, where the book is set. Annaud filmed in 3D. The film will premiere at the European Film Market on February 7, 2015. It is scheduled to be released in China on February 13, 2015 and in France on February 25, 2015.</movies:abstract>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Feng_Shaofeng">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1978-10-07T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Feng_Shaofeng</owl:sameAs>
         <movies:name>Feng Shaofeng</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -336,6 +394,9 @@
     </movies:hasDirector>
     <movies:hasDirector>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jean-Jacques_Annaud">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1943-10-01T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Jean-Jacques_Annaud</owl:sameAs>
         <movies:name>Jean-Jacques Annaud</movies:name>
       </movies:Person>
     </movies:hasDirector>
@@ -346,6 +407,15 @@
       <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
     </movies:hasGenre>
     <movies:title>Wolf Totem</movies:title>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#John_Collee">
+        <movies:nationality>Scottish</movies:nationality>
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1955-01-01T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/John_Collee</owl:sameAs>
+        <movies:name>John Collee</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
     <movies:isDistributedBy>
       <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#China_Film_Group_Corporation">
         <owl:sameAs>http://dbpedia.org/resource/China_Film_Group_Corporation</owl:sameAs>
@@ -354,9 +424,23 @@
     </movies:isDistributedBy>
     <movies:budget rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
     >3.8E7</movies:budget>
+    <movies:hasMusicComposer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#James_Horner">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1953-08-14T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/James_Horner</owl:sameAs>
+        <movies:name>James Horner</movies:name>
+      </movies:Person>
+    </movies:hasMusicComposer>
     <movies:country>China</movies:country>
   </movies:Movie>
   <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Fantastic_Four">
+    <movies:hasCinematographer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Oliver_Wood_(cinematographer)">
+        <owl:sameAs>http://dbpedia.org/resource/Oliver_Wood_(cinematographer)</owl:sameAs>
+        <movies:name>Oliver Wood</movies:name>
+      </movies:Person>
+    </movies:hasCinematographer>
     <movies:abstract>Fantastic Four is a 2005 superhero film based on the Marvel Comics team of the same name. It was directed by Tim Story, and released by 20th Century Fox. It is the second live-action Fantastic Four film to be filmed. A previous attempt, titled The Fantastic Four, was a B-movie produced by Roger Corman that ultimately went unreleased. Fantastic Four was released in the United States on July 8, 2005.Despite being a box-office success, the film was negatively received by critics, being criticized for its plot and its lack of originality. A sequel, Fantastic Four: Rise of the Silver Surfer, was released in 2007.</movies:abstract>
     <movies:hasGenre>
       <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Sci-Fi"/>
@@ -366,6 +450,10 @@
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jamie_Bell">
+        <movies:nationality>British</movies:nationality>
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1986-03-14T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Jamie_Bell</owl:sameAs>
         <movies:name>Jamie Bell</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -374,16 +462,33 @@
     <movies:title>Fantastic Four</movies:title>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Toby_Kebbell">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1982-07-09T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Toby_Kebbell</owl:sameAs>
         <movies:name>Toby Kebbell</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Miles_Teller">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1987-02-20T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Miles_Teller</owl:sameAs>
         <movies:name>Miles Teller</movies:name>
       </movies:Person>
     </movies:hasActor>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Avi_Arad">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1948-08-01T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Avi_Arad</owl:sameAs>
+        <movies:name>Avi Arad</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Kate_Mara">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1983-02-27T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Kate_Mara</owl:sameAs>
         <movies:name>Kate Mara</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -396,16 +501,64 @@
         <movies:companyName>20th Century Fox</movies:companyName>
       </movies:Company>
     </movies:isDistributedBy>
+    <movies:hasMusicComposer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#John_Ottman">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1964-07-06T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/John_Ottman</owl:sameAs>
+        <movies:name>John Ottman</movies:name>
+      </movies:Person>
+    </movies:hasMusicComposer>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Mark_Frost">
+        <movies:nationality>American</movies:nationality>
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1953-11-25T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Mark_Frost</owl:sameAs>
+        <movies:name>Mark Frost</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ralph_Winter_(producer)">
+        <movies:nationality>American</movies:nationality>
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1952-04-24T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Ralph_Winter_(producer)</owl:sameAs>
+        <movies:name>Ralph Winter</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
     <movies:hasDirector>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Josh_Trank">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1984-02-19T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Josh_Trank</owl:sameAs>
         <movies:name>Josh Trank</movies:name>
       </movies:Person>
     </movies:hasDirector>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Bernd_Eichinger">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1949-04-11T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Bernd_Eichinger</owl:sameAs>
+        <movies:name>Bernd Eichinger</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_France">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1962-01-04T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Michael_France</owl:sameAs>
+        <movies:name>Michael France</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
     <movies:hasGenre>
       <movies:Genre rdf:about="http://www.mohannadkarim.com/2016/movies.owl/genre#Fantasy"/>
     </movies:hasGenre>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_B._Jordan">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1987-02-09T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Michael_B._Jordan</owl:sameAs>
         <movies:name>Michael B. Jordan</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -418,6 +571,9 @@
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Joey_Dedio">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1963-09-11T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Joey_Dedio</owl:sameAs>
         <movies:name>Joey Dedio</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -433,6 +589,9 @@
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Franky_G.">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1965-10-30T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Franky_G</owl:sameAs>
         <movies:name>Franky G.</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -453,9 +612,20 @@
     </movies:hasActor>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Family"/>
     <movies:title>Ant-Man</movies:title>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Adam_McKay">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1968-04-17T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Adam_McKay</owl:sameAs>
+        <movies:name>Adam McKay</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Fantasy"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Paul_Rudd">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1969-04-06T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Paul_Rudd</owl:sameAs>
         <movies:name>Paul Rudd</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -472,27 +642,60 @@
         <movies:companyName>Walt Disney Studios Motion Pictures</movies:companyName>
       </movies:Company>
     </movies:isDistributedBy>
+    <movies:hasWriter rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Paul_Rudd"/>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Kevin_Feige">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1973-06-02T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Kevin_Feige</owl:sameAs>
+        <movies:name>Kevin Feige</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_Douglas">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1944-09-25T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Michael_Douglas</owl:sameAs>
         <movies:name>Michael Douglas</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasDirector>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Peyton_Reed">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1964-07-03T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Peyton_Reed</owl:sameAs>
         <movies:name>Peyton Reed</movies:name>
       </movies:Person>
     </movies:hasDirector>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Corey_Stoll">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1976-03-14T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Corey_Stoll</owl:sameAs>
         <movies:name>Corey Stoll</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
     <movies:country>United States</movies:country>
+    <movies:hasMusicComposer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Christophe_Beck">
+        <owl:sameAs>http://dbpedia.org/resource/Christophe_Beck</owl:sameAs>
+        <movies:name>Christophe Beck</movies:name>
+      </movies:Person>
+    </movies:hasMusicComposer>
+    <movies:hasCinematographer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Russell_Carpenter">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1950-12-09T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Russell_Carpenter</owl:sameAs>
+        <movies:name>Russell Carpenter</movies:name>
+      </movies:Person>
+    </movies:hasCinematographer>
     <owl:sameAs>http://dbpedia.org/resource/Ant-Man_(film)</owl:sameAs>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Matt_Gerald">
+        <owl:sameAs>http://dbpedia.org/resource/Matt_Gerald</owl:sameAs>
         <movies:name>Matt Gerald</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -511,17 +714,24 @@
   <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#The_Transporter_Refueled">
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ray_Stevenson">
+        <owl:sameAs>http://dbpedia.org/resource/</owl:sameAs>
         <movies:name>Ray Stevenson</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Anatole_Taubman">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1970-12-23T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Anatole_Taubman</owl:sameAs>
         <movies:name>Anatole Taubman</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ed_Skrein">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1983-03-29T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Ed_Skrein</owl:sameAs>
         <movies:name>Ed Skrein</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -534,6 +744,9 @@
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Thriller"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Samir_Guesmi">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1967-10-07T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Samir_Guesmi</owl:sameAs>
         <movies:name>Samir Guesmi</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -550,6 +763,9 @@
     >110.0</movies:duration>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jon_Heder">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1977-10-26T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Jon_Heder</owl:sameAs>
         <movies:name>Jon Heder</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -557,11 +773,17 @@
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Documentary"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#David_Henrie">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1989-07-11T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/David_Henrie</owl:sameAs>
         <movies:name>David Henrie</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Thomas_Ian_Nicholas">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1980-07-10T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Thomas_Ian_Nicholas</owl:sameAs>
         <movies:name>Thomas Ian Nicholas</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -574,11 +796,17 @@
     <movies:title>Walt Before Mickey</movies:title>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ayla_Kell">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1990-10-07T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Ayla_Kell</owl:sameAs>
         <movies:name>Ayla Kell</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Hunter_Gomez">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1991-12-20T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Hunter_Gomez</owl:sameAs>
         <movies:name>Hunter Gomez</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -587,27 +815,42 @@
   <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Mission:_Impossible_-_Rogue_Nation">
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Tom_Cruise">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1962-07-03T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Tom_Cruise</owl:sameAs>
         <movies:name>Tom Cruise</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Ving_Rhames">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1959-05-12T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Ving_Rhames</owl:sameAs>
         <movies:name>Ving Rhames</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasDirector>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Christopher_McQuarrie">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1968-01-01T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Christopher_McQuarrie</owl:sameAs>
         <movies:name>Christopher McQuarrie</movies:name>
       </movies:Person>
     </movies:hasDirector>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Action"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jeremy_Renner">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1971-01-07T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Jeremy_Renner</owl:sameAs>
         <movies:name>Jeremy Renner</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Simon_Pegg">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1970-02-14T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Simon_Pegg</owl:sameAs>
         <movies:name>Simon Pegg</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -615,6 +858,9 @@
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Adventure"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Alec_Baldwin">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1958-04-03T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Alec_Baldwin</owl:sameAs>
         <movies:name>Alec Baldwin</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -623,31 +869,63 @@
   <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Ted_2">
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Morgan_Freeman">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1978-07-03T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Morgan_Freeman</owl:sameAs>
         <movies:name>Morgan Freeman</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:title>Ted 2</movies:title>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Seth_MacFarlane">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1973-10-26T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Seth_MacFarlane</owl:sameAs>
+        <movies:name>Seth MacFarlane</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Alec_Sulkin">
+        <owl:sameAs>http://dbpedia.org/resource/Alec_Sulkin</owl:sameAs>
+        <movies:name>Alec Sulkin</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
     <movies:isProducedBy>
       <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Fuzzy_Door_Productions">
         <owl:sameAs>http://dbpedia.org/resource/Fuzzy_Door_Productions</owl:sameAs>
         <movies:companyName>Fuzzy Door Productions</movies:companyName>
       </movies:Company>
     </movies:isProducedBy>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Wellesley_Wild">
+        <owl:sameAs>http://dbpedia.org/resource/Wellesley_Wild</owl:sameAs>
+        <movies:name>Wellesley Wild</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
     <movies:isDistributedBy rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/company#Universal_Studios"/>
+    <movies:hasWriter rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Seth_MacFarlane"/>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Scott_Stuber">
+        <owl:sameAs>http://dbpedia.org/resource/Scott_Stuber</owl:sameAs>
+        <movies:name>Scott Stuber</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Mark_Wahlberg">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1971-06-05T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Mark_Wahlberg</owl:sameAs>
         <movies:name>Mark Wahlberg</movies:name>
       </movies:Person>
     </movies:hasActor>
-    <movies:hasActor>
-      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Seth_MacFarlane">
-        <movies:name>Seth MacFarlane</movies:name>
-      </movies:Person>
-    </movies:hasActor>
+    <movies:hasActor rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Seth_MacFarlane"/>
     <movies:country>United States</movies:country>
     <movies:hasDirector rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Seth_MacFarlane"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Amanda_Seyfried">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1985-12-03T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Amanda_Seyfried</owl:sameAs>
         <movies:name>Amanda Seyfried</movies:name>
       </movies:Person>
     </movies:hasActor>
@@ -655,12 +933,31 @@
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Comedy"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Jessica_Barth">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1979-01-01T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Jessica_Barth</owl:sameAs>
         <movies:name>Jessica Barth</movies:name>
       </movies:Person>
     </movies:hasActor>
     <movies:abstract>Ted 2 is an upcoming American comedy film directed by Seth MacFarlane and written by MacFarlane, Alec Sulkin and Wellesley Wild. It is the sequel to MacFarlane's 2012 film Ted. The film stars MacFarlane as the title character, along with Mark Wahlberg and Amanda Seyfried. The film is scheduled to be released on June 26, 2015, by  Universal Pictures.</movies:abstract>
+    <movies:hasCinematographer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Michael_Barrett_(cinematographer)">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1970-05-28T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Michael_Barrett_(cinematographer)</owl:sameAs>
+        <movies:name>Michael Barrett</movies:name>
+      </movies:Person>
+    </movies:hasCinematographer>
   </movies:Movie>
   <movies:Movie rdf:about="http://www.mohannadkarim.com/2016/movies.owl/movie#Knock_Knock">
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Eli_Roth">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1972-04-18T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Eli_Roth</owl:sameAs>
+        <movies:name>Eli Roth</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Thriller"/>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Dan_Baily">
@@ -669,27 +966,41 @@
     </movies:hasActor>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Keanu_Reeves">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1964-09-02T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Keanu_Reeves</owl:sameAs>
         <movies:name>Keanu Reeves</movies:name>
       </movies:Person>
     </movies:hasActor>
     <owl:sameAs>http://dbpedia.org/resource/Knock,_Knock_(2015_film)</owl:sameAs>
+    <movies:hasProducer>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Colleen_Camp">
+        <movies:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >1953-06-07T00:00:00</movies:birthDate>
+        <owl:sameAs>http://dbpedia.org/resource/Colleen_Camp</owl:sameAs>
+        <movies:name>Colleen Camp</movies:name>
+      </movies:Person>
+    </movies:hasProducer>
     <movies:hasActor>
       <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Aaron_Burns">
         <movies:name>Aaron Burns</movies:name>
       </movies:Person>
     </movies:hasActor>
+    <movies:hasWriter rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Eli_Roth"/>
     <movies:title>Knock Knock</movies:title>
+    <movies:hasWriter>
+      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Guillermo_Amoedo">
+        <owl:sameAs>http://dbpedia.org/resource/Guillermo_Amoedo</owl:sameAs>
+        <movies:name>Guillermo Amoedo</movies:name>
+      </movies:Person>
+    </movies:hasWriter>
     <movies:isDistributedBy>
       <movies:Company rdf:about="http://www.mohannadkarim.com/2016/movies.owl/company#Lions_Gate_Entertainment">
         <owl:sameAs>http://dbpedia.org/resource/Lions_Gate_Entertainment</owl:sameAs>
         <movies:companyName>Lions Gate Entertainment</movies:companyName>
       </movies:Company>
     </movies:isDistributedBy>
-    <movies:hasDirector>
-      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Eli_Roth">
-        <movies:name>Eli Roth</movies:name>
-      </movies:Person>
-    </movies:hasDirector>
+    <movies:hasDirector rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Eli_Roth"/>
     <movies:hasGenre rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/genre#Suspense"/>
     <movies:abstract>Knock, Knock is a 2015 American horror thriller film directed by Eli Roth, who also co-wrote the script with Guillermo Amoedo and Nicolás López. The film stars Keanu Reeves.</movies:abstract>
     <movies:hasActor>
@@ -698,10 +1009,6 @@
       </movies:Person>
     </movies:hasActor>
     <movies:country>United States</movies:country>
-    <movies:hasActor>
-      <movies:Person rdf:about="http://www.mohannadkarim.com/2016/movies.owl/person#Colleen_Camp">
-        <movies:name>Colleen Camp</movies:name>
-      </movies:Person>
-    </movies:hasActor>
+    <movies:hasActor rdf:resource="http://www.mohannadkarim.com/2016/movies.owl/person#Colleen_Camp"/>
   </movies:Movie>
 </rdf:RDF>

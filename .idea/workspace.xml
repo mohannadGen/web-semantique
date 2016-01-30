@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WepSiteParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WepSiteParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/WepSiteParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8387096">
-              <caret line="158" column="68" selection-start-line="158" selection-start-column="68" selection-end-line="158" selection-end-column="68" />
+            <state vertical-scroll-proportion="1.9254498">
+              <caret line="247" column="77" selection-start-line="247" selection-start-column="77" selection-end-line="247" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,21 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movies.owl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/movies.owl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33161953">
-              <caret line="54" column="87" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SparqlQuery.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SparqlQuery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="38.80645">
-              <caret line="153" column="45" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="45" />
+            <state vertical-scroll-proportion="-3.580645">
+              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,9 +76,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/movies.owl" />
         <option value="$PROJECT_DIR$/src/main/java/SparqlQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/WepSiteParser.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/movies.owl" />
       </list>
     </option>
   </component>
@@ -691,12 +681,12 @@
       <updated>1454093752735</updated>
       <workItem from="1454093756210" duration="10987000" />
       <workItem from="1454105653924" duration="2013000" />
-      <workItem from="1454141781806" duration="10688000" />
+      <workItem from="1454141781806" duration="17790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23688000" />
+    <option name="totallyTimeSpent" value="30790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -796,10 +786,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/movies.owl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33161953">
+          <caret line="54" column="87" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SparqlQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="38.80645">
-          <caret line="153" column="45" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="45" />
+        <state vertical-scroll-proportion="-3.580645">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -808,19 +806,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/WepSiteParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8387096">
-          <caret line="158" column="68" selection-start-line="158" selection-start-column="68" selection-end-line="158" selection-end-column="68" />
+        <state vertical-scroll-proportion="1.9254498">
+          <caret line="247" column="77" selection-start-line="247" selection-start-column="77" selection-end-line="247" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/movies.owl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33161953">
-          <caret line="54" column="87" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
