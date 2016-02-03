@@ -1,10 +1,12 @@
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.util.FileManager;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.RDFS;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -20,7 +22,7 @@ import java.util.regex.Pattern;
  * Created by mohannad on 29/01/16.
  */
 public class WepSiteParser {
-    private final static String WEBSITE = "http://www.imdb.com";
+    private final static String WEBSITE = "http://www.movies.com/dvd-movies?pn=";
     private final static String Movies_OWL = "http://www.mohannadkarim.com/2016/movies.owl";
     private final static String NS = Movies_OWL + "#";
     private final static String MOVIE = Movies_OWL + "/movie" + "#";
@@ -65,7 +67,7 @@ public class WepSiteParser {
         //Document doc = Jsoup.connect(WEBSITE+"/chart/top/?ref_=nv_mv_250_6").userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0")
         //.header("Accept-Language", "en").get();
         org.jsoup.Connection connection = Jsoup
-                .connect("http://www.movies.com/dvd-movies?pn="+i).userAgent("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0")
+                .connect(WEBSITE+i).userAgent("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0")
                 .header("Accept-Language","en").ignoreHttpErrors(true);
         System.out.println(connection.execute().url());
         Document doc = connection.get();
@@ -81,7 +83,11 @@ public class WepSiteParser {
 
         System.out.println(urls.size());
         for(String url: urls) {
-            parseMovie(url);
+            try {
+                parseMovie(url);
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }
     }
 
@@ -108,7 +114,8 @@ public class WepSiteParser {
         String mResult;
         if((mResult = SparqlQuery.movieInDbpediaEn(movietitle)) != null) {
             System.out.println("mResult: " + mResult);
-            movie.addProperty(OWL.sameAs, mResult);
+            movie.addProperty(OWL.sameAs, m.createResource(mResult) );
+
 
             //add movie details to the RDF model
             //details available: runtime, distributor, studio, budget, country, abstract
@@ -159,7 +166,7 @@ public class WepSiteParser {
                 Resource distributor = m.createResource(COMPANY + mDetails.get("distributor").replace("http://dbpedia.org/resource/", ""));
                 distributor.addProperty(RDF.type, m.getProperty(NS + "Company"))
                         .addProperty(m.getProperty(NS + "companyName"), mDetails.get("distributor").replace("http://dbpedia.org/resource/", "").replace("_", " "))
-                        .addProperty(OWL.sameAs, mDetails.get("distributor"));
+                        .addProperty(OWL.sameAs, m.createResource(mDetails.get("distributor")));
                 movie.addProperty(m.getProperty(NS + "isDistributedBy"), distributor);
             }
 
@@ -169,7 +176,7 @@ public class WepSiteParser {
                 Resource studio = m.createResource(COMPANY + mDetails.get("studio").replace("http://dbpedia.org/resource/", ""));
                 studio.addProperty(RDF.type, m.getProperty(NS + "Company"))
                         .addProperty(m.getProperty(NS + "companyName"), mDetails.get("studio").replace("http://dbpedia.org/resource/", "").replace("_", " "))
-                        .addProperty(OWL.sameAs, mDetails.get("studio"));
+                        .addProperty(OWL.sameAs, m.createResource(mDetails.get("studio")));
                 movie.addProperty(m.getProperty(NS + "isProducedBy"), studio);
             }
 
@@ -212,7 +219,7 @@ public class WepSiteParser {
                         String qResult;
                         if((qResult = SparqlQuery.personInDbpediaEn(director)) != null) { // in dbpedia.org
                             System.out.println("\t\tqResult: "+DBR +qResult);
-                            person.addProperty(OWL.sameAs, DBR + qResult);
+                            person.addProperty(OWL.sameAs, m.createResource(DBR + qResult));
                             HashMap<String,String> data = SparqlQuery.getPersonalInfo(DBR + qResult);
                             if(data.containsKey("birthdate")) {
                                 String birthdate = data.get("birthdate");
@@ -246,7 +253,7 @@ public class WepSiteParser {
                         String qResult;
                         if((qResult = SparqlQuery.personInDbpediaEn(actor)) != null) { // in dbpedia.org
                             System.out.println("\t\tqResult: "+DBR +qResult);
-                            person.addProperty(OWL.sameAs, DBR + qResult);
+                            person.addProperty(OWL.sameAs, m.createResource(DBR + qResult));
                             HashMap<String,String> data = SparqlQuery.getPersonalInfo( DBR + qResult);
                             //add birth date
                             if(data.containsKey("birthdate")) {
@@ -295,7 +302,7 @@ public class WepSiteParser {
                     Resource person = m.createResource(PERSON + producer.replace("http://dbpedia.org/resource/", ""));
                     person.addProperty(RDF.type, m.getProperty(NS + "Person"))
                             .addProperty(m.getProperty(NS + "name"), name)
-                            .addProperty(OWL.sameAs, producer);
+                            .addProperty(OWL.sameAs, m.createResource(producer));
                     //add birth date
                     if(data.containsKey("birthdate")) {
                         String birthdate = data.get("birthdate");
@@ -329,7 +336,7 @@ public class WepSiteParser {
                     Resource person = m.createResource(PERSON + composer.replace("http://dbpedia.org/resource/", ""));
                     person.addProperty(RDF.type, m.getProperty(NS + "Person"))
                             .addProperty(m.getProperty(NS + "name"), name)
-                            .addProperty(OWL.sameAs, composer);
+                            .addProperty(OWL.sameAs,m.createResource( composer));
                     //add birth date
                     if(data.containsKey("birthdate")) {
                         String birthdate = data.get("birthdate");
@@ -362,7 +369,7 @@ public class WepSiteParser {
                     Resource person = m.createResource(PERSON + editor.replace("http://dbpedia.org/resource/", ""));
                     person.addProperty(RDF.type, m.getProperty(NS + "Person"))
                             .addProperty(m.getProperty(NS + "name"), name)
-                            .addProperty(OWL.sameAs, editor);
+                            .addProperty(OWL.sameAs, m.createResource(editor));
                     //add birth date
                     if(data.containsKey("birthdate")) {
                         String birthdate = data.get("birthdate");
@@ -394,7 +401,7 @@ public class WepSiteParser {
                     Resource person = m.createResource(PERSON + writer.replace("http://dbpedia.org/resource/", ""));
                     person.addProperty(RDF.type, m.getProperty(NS + "Person"))
                             .addProperty(m.getProperty(NS + "name"), name)
-                            .addProperty(OWL.sameAs, writer);
+                            .addProperty(OWL.sameAs,m.createResource(writer));
                     //add birth date
                     if(data.containsKey("birthdate")) {
                         String birthdate = data.get("birthdate");
@@ -427,7 +434,7 @@ public class WepSiteParser {
                     Resource person = m.createResource(PERSON + cinematographer.replace("http://dbpedia.org/resource/", ""));
                     person.addProperty(RDF.type, m.getProperty(NS + "Person"))
                             .addProperty(m.getProperty(NS + "name"), name)
-                            .addProperty(OWL.sameAs, cinematographer);
+                            .addProperty(OWL.sameAs, m.createResource(cinematographer));
                     //add birth date
                     if(data.containsKey("birthdate")) {
                         String birthdate = data.get("birthdate");
@@ -459,10 +466,15 @@ public class WepSiteParser {
 
     }
 
-    public static void main(String args []) throws IOException {
+    public static void main(String args []) throws FileNotFoundException {
         WepSiteParser wp = new WepSiteParser();
-        for(int i=5 ; i <6 ; i++)
-            wp.parseIndex(i);
+        for(int i=2 ; i <20 ; i++){
+            try {
+                wp.parseIndex(i);
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
         wp.save();
         System.out.println("done !!!");
     }
